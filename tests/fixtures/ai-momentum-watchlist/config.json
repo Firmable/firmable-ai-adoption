@@ -1,0 +1,9 @@
+{
+  "labels": [
+    "EXPANDING",
+    "ACCELERATING"
+  ],
+  "recent_days": 90,
+  "evaluation_date": "2026-11-20",
+  "batch_size": 100
+}

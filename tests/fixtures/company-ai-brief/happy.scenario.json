@@ -1,0 +1,444 @@
+{
+  "description": "One batch: full brief, not found, unknown level, HTML, row-level error.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {
+          "withEvidence": "true"
+        },
+        "body": {
+          "records": [
+            {
+              "domain": "acme.example",
+              "external_id": "c1"
+            },
+            {
+              "company_id": "f900000000002",
+              "external_id": "c2"
+            },
+            {
+              "domain": "gamma.example",
+              "external_id": "c3"
+            },
+            {
+              "domain": "delta.example",
+              "external_id": "c6/x"
+            },
+            {
+              "domain": "eps.example",
+              "external_id": "c8"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "acme.example",
+                "external_id": "c1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Acme Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "STRONG",
+                "explanation": "AI workforce strong, meaningful architecture, basic AI hiring.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "MEANINGFUL",
+                    "headline": "4 of 14 capabilities: Serving, Data pipelines",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true,
+                    "sub_dimensions": [
+                      {
+                        "category": "Serving",
+                        "present": true,
+                        "technologies": 2,
+                        "top": "Model Server Example"
+                      }
+                    ]
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "1 of 9 categories: General AI assistants",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "3 AI roles in 12 months",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true,
+                    "sub_dimensions": {
+                      "hiring_scale": {
+                        "roles_12m": 3,
+                        "roles_90d": 0
+                      }
+                    }
+                  },
+                  "initiatives": {
+                    "level": "NONE",
+                    "headline": null,
+                    "observability": "LOW",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "AI leadership in place, 11 AI specialists",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 33,
+                  "footprint": 2,
+                  "hiring": 3,
+                  "initiatives": 5,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              },
+              "evidence": {
+                "architecture": {
+                  "as_of": "2026-11-05",
+                  "framework_version": "2026.10",
+                  "item_count": 33,
+                  "truncated": true,
+                  "items": [
+                    {
+                      "ref": {
+                        "type": "technology",
+                        "id": "t1"
+                      },
+                      "technology": "Model Server Example",
+                      "category": "Serving",
+                      "catalogue_category": "Model serving",
+                      "sources": [
+                        "job ads",
+                        "website"
+                      ],
+                      "first_seen": "2026-02-01",
+                      "last_seen": "2026-11-01",
+                      "observation": "DIRECT",
+                      "confidence_band": "HIGH",
+                      "state": "CURRENT",
+                      "qualifies": true
+                    },
+                    {
+                      "ref": {
+                        "type": "technology",
+                        "id": "t2"
+                      },
+                      "technology": "Old Queue Example",
+                      "category": "Data pipelines",
+                      "first_seen": "2024-02-01",
+                      "last_seen": "2025-01-01",
+                      "observation": "INFERRED",
+                      "confidence_band": "LOW",
+                      "state": "DORMANT",
+                      "qualifies": false
+                    }
+                  ]
+                },
+                "footprint": {
+                  "as_of": "2026-11-05",
+                  "framework_version": "2026.10",
+                  "item_count": 2,
+                  "truncated": false,
+                  "items": [
+                    {
+                      "ref": {
+                        "type": "technology",
+                        "id": "t3"
+                      },
+                      "technology": "Assistant Example | Pro",
+                      "category": "General AI assistants",
+                      "group": "Workplace AI",
+                      "last_seen": "2026-11-02",
+                      "confidence_band": "HIGH",
+                      "state": "CURRENT",
+                      "qualifies": true
+                    },
+                    {
+                      "ref": {
+                        "type": "technology",
+                        "id": "t4"
+                      },
+                      "technology": "Assistant_Trial *Example*",
+                      "category": "General AI assistants",
+                      "last_seen": "2025-06-02",
+                      "confidence_band": "LOW",
+                      "state": "AGEING"
+                    }
+                  ]
+                },
+                "hiring": {
+                  "as_of": "2026-11-05",
+                  "framework_version": "2026.10",
+                  "item_count": 3,
+                  "truncated": false,
+                  "items": [
+                    {
+                      "ref": {
+                        "type": "signal",
+                        "id": "s1"
+                      },
+                      "title": "Head of Machine Learning",
+                      "type": "AI_LEADERSHIP_ROLE",
+                      "date": "2026-10-13",
+                      "qualifies": true
+                    },
+                    {
+                      "ref": {
+                        "type": "signal",
+                        "id": "s2"
+                      },
+                      "title": "Data Analyst",
+                      "type": "AI_ADJACENT_ROLE",
+                      "date": "2026-09-01",
+                      "qualifies": false
+                    },
+                    {
+                      "ref": {
+                        "type": "signal",
+                        "id": "s3"
+                      },
+                      "title": "ML Engineer",
+                      "type": "AI_ROLE",
+                      "date": "2026-08-01",
+                      "qualifies": true
+                    }
+                  ]
+                },
+                "workforce": {
+                  "as_of": "2026-11-05",
+                  "framework_version": "2026.10",
+                  "item_count": 2,
+                  "truncated": false,
+                  "items": [
+                    {
+                      "ref": {
+                        "type": "person",
+                        "id": "fp900000000001"
+                      },
+                      "title": "Director of AI",
+                      "type": "AI_LEADER",
+                      "seniority": "Director",
+                      "first_seen": "2025-01-01",
+                      "confidence_band": "HIGH",
+                      "state": "CURRENT",
+                      "qualifies": true
+                    },
+                    {
+                      "ref": {
+                        "type": "person",
+                        "id": "fp900000000002"
+                      },
+                      "title": "ML Engineer",
+                      "type": "AI_SPECIALIST",
+                      "seniority": "Senior",
+                      "first_seen": "2025-03-01",
+                      "confidence_band": "MEDIUM",
+                      "state": "CURRENT",
+                      "company_name": "Other Org Example",
+                      "qualifies": true
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "input": {
+                "company_id": "f900000000002",
+                "external_id": "c2"
+              },
+              "company": null,
+              "error": {
+                "code": "not_found",
+                "message": "No AI adoption data for this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            },
+            {
+              "input": {
+                "domain": "gamma.example",
+                "external_id": "c3"
+              },
+              "company": {
+                "firmable_id": "f900000000003",
+                "company_name": "Gamma Holdings Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "EXEMPLARY",
+                "explanation": "AI workforce strong, meaningful architecture, basic AI hiring.",
+                "momentum": {},
+                "dimensions": {
+                  "architecture": {
+                    "level": "EXEMPLARY",
+                    "headline": "A level this code has not seen before",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "1 of 9 categories",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "NONE",
+                    "headline": null,
+                    "observability": "LOW",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "NONE",
+                    "headline": null,
+                    "observability": "LOW",
+                    "counts_toward_overall": false
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 0,
+                  "footprint": 0,
+                  "hiring": 0,
+                  "initiatives": 0
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "delta.example",
+                "external_id": "c6/x"
+              },
+              "company": {
+                "firmable_id": "f900000000004",
+                "company_name": "Delta # Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "BASIC",
+                "explanation": "<script>alert(1)</script> Basic footprint.\nSecond line.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "MEANINGFUL",
+                    "headline": "4 of 14 capabilities: Serving, Data pipelines",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true,
+                    "sub_dimensions": [
+                      {
+                        "category": "Serving",
+                        "present": true,
+                        "technologies": 2,
+                        "top": "Model Server Example"
+                      }
+                    ]
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "1 of 9 categories: General AI assistants",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "3 AI roles in 12 months",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true,
+                    "sub_dimensions": {
+                      "hiring_scale": {
+                        "roles_12m": 3,
+                        "roles_90d": 0
+                      }
+                    }
+                  },
+                  "initiatives": {
+                    "level": "NONE",
+                    "headline": null,
+                    "observability": "LOW",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "AI leadership in place, 11 AI specialists",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 33,
+                  "footprint": 2,
+                  "hiring": 3,
+                  "initiatives": 5,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              },
+              "evidence": {}
+            },
+            {
+              "input": {
+                "domain": "eps.example",
+                "external_id": "c8"
+              },
+              "company": null,
+              "error": {
+                "code": "internal_error",
+                "message": "Could not read this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 3
+          }
+        }
+      }
+    }
+  ]
+}

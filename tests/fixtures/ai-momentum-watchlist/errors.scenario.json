@@ -1,0 +1,88 @@
+{
+  "description": "500 batch, malformed batch, then 402 stops the run.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "acme.example",
+              "external_id": "e1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "e2"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "internal",
+            "message": "Something went wrong"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "gamma.example",
+              "external_id": "e3"
+            },
+            {
+              "domain": "delta.example",
+              "external_id": "e4"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "usage": {
+            "billable_rows": 2
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "eps.example",
+              "external_id": "e5"
+            },
+            {
+              "domain": "zeta.example",
+              "external_id": "e6"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 402,
+        "json": {
+          "error": {
+            "code": "insufficient_credits",
+            "message": "Your organisation hasn't enough credits"
+          }
+        }
+      }
+    }
+  ]
+}

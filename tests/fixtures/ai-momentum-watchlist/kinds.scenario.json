@@ -1,0 +1,160 @@
+{
+  "description": "Only AI hiring signals count; three accounts in two batches.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "acme.example",
+              "external_id": "k1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "k2"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "acme.example",
+                "external_id": "k1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Acme Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI initiatives",
+                      "count": 2,
+                      "latest": "2026-11-15"
+                    },
+                    {
+                      "kind": "AI hiring",
+                      "count": 1,
+                      "latest": "2026-09-01"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "beta.example",
+                "external_id": "k2"
+              },
+              "company": {
+                "firmable_id": "f900000000002",
+                "company_name": "Beta Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-11-19"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 2
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "gamma.example",
+              "external_id": "k3"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "gamma.example",
+                "external_id": "k3"
+              },
+              "company": null,
+              "error": {
+                "code": "not_found",
+                "message": "No AI adoption data for this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 0
+          }
+        }
+      }
+    }
+  ]
+}

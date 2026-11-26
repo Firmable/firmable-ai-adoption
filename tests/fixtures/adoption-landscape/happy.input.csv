@@ -1,0 +1,10 @@
+row_id,domain,company_id,segment
+r1,alpha.example,,Enterprise
+r2,https://www.beta.example/about,,Enterprise
+r3,gamma.example,,Growth
+r4,,f900000000004,Growth
+r5,alpha.example,,Enterprise
+r6,not a domain,,Growth
+r7,delta.example,,Growth
+r8,epsilon.example,,
+r9,alpha-group.example,,Enterprise

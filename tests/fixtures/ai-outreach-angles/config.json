@@ -1,0 +1,54 @@
+{
+  "angles": [
+    {
+      "id": "leadership_push",
+      "when": {
+        "overall_level_in": [
+          "STRONG",
+          "ADVANCED"
+        ],
+        "momentum_in": [
+          "EXPANDING"
+        ]
+      },
+      "template": "{company_name} shows {overall_level} AI adoption with {momentum} momentum. Ask who owns the AI roadmap."
+    },
+    {
+      "id": "hiring_angle",
+      "when": {
+        "dimension": {
+          "name": "hiring",
+          "level_in": [
+            "BASIC",
+            "MODERATE",
+            "MEANINGFUL"
+          ]
+        }
+      },
+      "template": "{company_name} AI hiring reads as {dimension_level}: {headline}. Ask what the new roles will own."
+    },
+    {
+      "id": "early_stage",
+      "when": {
+        "overall_level_in": [
+          "none",
+          "basic"
+        ]
+      },
+      "template": "Firmable rates {company_name} at {overall_level} overall. Ask where AI is being trialled."
+    },
+    {
+      "id": "workforce_angle",
+      "when": {
+        "dimension": {
+          "name": "workforce",
+          "level_in": [
+            "STRONG"
+          ]
+        }
+      },
+      "template": "Your {dimension} level is {dimension_level}. {headline}"
+    }
+  ],
+  "batch_size": 100
+}

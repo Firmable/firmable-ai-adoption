@@ -1,0 +1,166 @@
+{
+  "description": "Batches of 2; the credit limit stops the second batch before it is sent.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "alpha.example",
+              "external_id": "row-1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "row-2"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "alpha.example",
+                "external_id": "row-1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Alpha Example Pty Ltd",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "STRONG",
+                "explanation": "Synthetic explanation: Alpha Example Pty Ltd has STRONG adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "MEANINGFUL",
+                    "headline": "Synthetic architecture headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "Synthetic workforce headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "beta.example",
+                "external_id": "row-2"
+              },
+              "company": {
+                "firmable_id": "f900000000002",
+                "company_name": "Beta Example Ltd",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "SMB",
+                "overall_level": "BASIC",
+                "explanation": "Synthetic explanation: Beta Example Ltd has BASIC adoption.",
+                "momentum": {
+                  "label": "STEADY",
+                  "signals": []
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 2
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+row_id,domain,company_id,company_name
+c1,https://www.acme.example/about,,Acme Example
+c2,,f900000000002,Beta Example
+c3,gamma.example,,Gamma Pty
+c4,ACME.example,,Acme again
+c5,not a domain,,Broken
+c6/x,delta.example,,"=HYPERLINK(""http://x"")"
+c7,,bad id!,Bad
+c8,eps.example,,Eps Example

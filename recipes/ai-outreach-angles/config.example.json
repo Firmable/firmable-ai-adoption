@@ -1,0 +1,25 @@
+{
+  "angles": [
+    {
+      "id": "roadmap_owner",
+      "when": { "overall_level_in": ["STRONG", "ADVANCED"], "momentum_in": ["EXPANDING"] },
+      "template": "{company_name} shows {overall_level} AI adoption with {momentum} momentum. Ask who owns the AI roadmap and what is planned next."
+    },
+    {
+      "id": "new_ai_roles",
+      "when": { "dimension": { "name": "hiring", "level_in": ["BASIC", "MODERATE", "MEANINGFUL", "STRONG"] } },
+      "template": "{company_name} AI hiring reads as {dimension_level} ({headline}). Ask what the new AI roles will own in their first year."
+    },
+    {
+      "id": "assistant_rollout",
+      "when": { "dimension": { "name": "footprint", "level_in": ["BASIC", "MODERATE"] } },
+      "template": "Firmable sees a {dimension_level} AI tool footprint at {company_name}: {headline}. Ask how widely those tools are rolled out."
+    },
+    {
+      "id": "early_trials",
+      "when": { "overall_level_in": ["NONE", "BASIC"] },
+      "template": "Firmable rates {company_name} at {overall_level} overall. Ask where AI is being trialled today."
+    }
+  ],
+  "batch_size": 100
+}

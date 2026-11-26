@@ -1,0 +1,21 @@
+{
+  "name": "firmable-peer-comparison",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Compare one company AI adoption with a defined peer cohort.",
+  "type": "module",
+  "main": "dist/src/recipe.js",
+  "bin": {
+    "firmable-peer-comparison": "dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "firmable-api-client": "0.1.0"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "tsc -b && node --test \"dist/tests/**/*.test.js\""
+  }
+}

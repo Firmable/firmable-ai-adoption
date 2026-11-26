@@ -1,0 +1,11 @@
+{
+  "labels": [
+    "EXPANDING"
+  ],
+  "signal_kinds": [
+    "ai hiring"
+  ],
+  "recent_days": 30,
+  "evaluation_date": "2026-11-20",
+  "batch_size": 2
+}

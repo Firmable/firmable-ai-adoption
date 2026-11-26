@@ -1,0 +1,110 @@
+{
+  "description": "The second batch would pass the 1.5 credit limit and is not sent.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "acme.example",
+              "external_id": "row-1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "row-2"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "acme.example",
+                "external_id": "row-1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Acme Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "beta.example",
+                "external_id": "row-2"
+              },
+              "company": {
+                "firmable_id": "f900000000002",
+                "company_name": "Beta Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "STEADY",
+                  "signals": []
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 2
+          }
+        }
+      }
+    }
+  ]
+}

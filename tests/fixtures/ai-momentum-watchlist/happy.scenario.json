@@ -1,0 +1,297 @@
+{
+  "description": "One batch covering every watch status.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "acme.example",
+              "external_id": "w1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "w2"
+            },
+            {
+              "domain": "gamma.example",
+              "external_id": "w3"
+            },
+            {
+              "domain": "delta.example",
+              "external_id": "w4"
+            },
+            {
+              "domain": "eps.example",
+              "external_id": "w5"
+            },
+            {
+              "domain": "zeta.example",
+              "external_id": "w8"
+            },
+            {
+              "domain": "eta.example",
+              "external_id": "w9"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "acme.example",
+                "external_id": "w1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Acme Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    },
+                    {
+                      "kind": "AI initiatives",
+                      "count": 1,
+                      "latest": "2026-03-01"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "beta.example",
+                "external_id": "w2"
+              },
+              "company": {
+                "firmable_id": "f900000000002",
+                "company_name": "Beta Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 3,
+                      "latest": "2026-05-01"
+                    },
+                    {
+                      "kind": "AI initiatives",
+                      "count": 1
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "gamma.example",
+                "external_id": "w3"
+              },
+              "company": {
+                "firmable_id": "f900000000003",
+                "company_name": "Gamma Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "STEADY",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 1,
+                      "latest": "2026-11-01"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "delta.example",
+                "external_id": "w4"
+              },
+              "company": {
+                "firmable_id": "f900000000004",
+                "company_name": "Delta Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {},
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "eps.example",
+                "external_id": "w5"
+              },
+              "company": null,
+              "error": {
+                "code": "not_found",
+                "message": "No AI adoption data for this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            },
+            {
+              "input": {
+                "domain": "zeta.example",
+                "external_id": "w8"
+              },
+              "company": {
+                "firmable_id": "f900000000006",
+                "company_name": "Zeta Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "MODERATE",
+                "explanation": "Synthetic explanation.",
+                "momentum": {
+                  "label": "accelerating",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 1,
+                      "latest": "2026-11-25"
+                    },
+                    {
+                      "kind": "AI workforce",
+                      "count": 4,
+                      "latest": "2026-11-01T09:30:00Z"
+                    },
+                    {
+                      "kind": "AI hiring",
+                      "count": 1,
+                      "latest": "2026-02-30"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "2 AI roles",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "hiring": 2
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "eta.example",
+                "external_id": "w9"
+              },
+              "company": null,
+              "error": {
+                "code": "internal_error",
+                "message": "Could not read this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 5
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+row_id,domain,company_name,segment
+w1,acme.example,Acme Example,Enterprise
+w2,beta.example,Beta Example,Mid-market
+w3,gamma.example,Gamma Example,Mid-market
+w4,delta.example,Delta Example,SMB
+w5,eps.example,Eps Example,SMB
+w6,https://www.acme.example,Acme again,Enterprise
+w7,not a domain,Broken,
+w8,zeta.example,=Zeta Example,Enterprise
+w9,eta.example,Eta Example,SMB

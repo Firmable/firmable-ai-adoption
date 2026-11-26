@@ -1,0 +1,9 @@
+row_id,domain,company_name,segment
+o1,acme.example,Acme Example,Enterprise
+o2,beta.example,Beta Example,SMB
+o3,gamma.example,Gamma Example,Mid-market
+o4,delta.example,Delta Example,Mid-market
+o5,www.acme.example,Acme again,Enterprise
+o6,not a domain,Broken,
+o7,eps.example,Eps *Input*,SMB
+o8,zeta.example,Zeta Example,SMB

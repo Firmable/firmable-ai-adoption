@@ -1,0 +1,5 @@
+row_id,domain,company_name,segment
+acct-001,atlassian.com,Atlassian,Enterprise
+acct-002,seek.com.au,SEEK,Enterprise
+acct-003,culturekings.com.au,Culture Kings,Mid-market
+acct-004,linfox.com,Linfox,Enterprise
