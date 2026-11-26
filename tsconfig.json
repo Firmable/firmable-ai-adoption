@@ -1,0 +1,23 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "shared/typescript"
+    },
+    {
+      "path": "recipes/adoption-landscape/typescript"
+    },
+    {
+      "path": "recipes/company-ai-brief/typescript"
+    },
+    {
+      "path": "recipes/peer-comparison/typescript"
+    },
+    {
+      "path": "recipes/ai-momentum-watchlist/typescript"
+    },
+    {
+      "path": "recipes/ai-outreach-angles/typescript"
+    }
+  ]
+}

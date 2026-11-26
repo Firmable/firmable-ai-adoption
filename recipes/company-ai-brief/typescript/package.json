@@ -1,0 +1,21 @@
+{
+  "name": "firmable-company-ai-brief",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Markdown brief of one company AI adoption signals and evidence.",
+  "type": "module",
+  "main": "dist/src/recipe.js",
+  "bin": {
+    "firmable-company-ai-brief": "dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "firmable-api-client": "0.1.0"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "tsc -b && node --test \"dist/tests/**/*.test.js\""
+  }
+}

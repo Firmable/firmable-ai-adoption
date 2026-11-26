@@ -1,0 +1,134 @@
+{
+  "description": "The second batch would pass the 7 credit limit and is not sent.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {
+          "withEvidence": "true"
+        },
+        "body": {
+          "records": [
+            {
+              "domain": "acme.example",
+              "external_id": "row-1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "row-2"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "acme.example",
+                "external_id": "row-1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Acme Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "STRONG",
+                "explanation": "AI workforce strong, meaningful architecture, basic AI hiring.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "MEANINGFUL",
+                    "headline": "4 of 14 capabilities: Serving, Data pipelines",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true,
+                    "sub_dimensions": [
+                      {
+                        "category": "Serving",
+                        "present": true,
+                        "technologies": 2,
+                        "top": "Model Server Example"
+                      }
+                    ]
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "1 of 9 categories: General AI assistants",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "3 AI roles in 12 months",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true,
+                    "sub_dimensions": {
+                      "hiring_scale": {
+                        "roles_12m": 3,
+                        "roles_90d": 0
+                      }
+                    }
+                  },
+                  "initiatives": {
+                    "level": "NONE",
+                    "headline": null,
+                    "observability": "LOW",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "AI leadership in place, 11 AI specialists",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 33,
+                  "footprint": 2,
+                  "hiring": 3,
+                  "initiatives": 5,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              },
+              "evidence": {}
+            },
+            {
+              "input": {
+                "domain": "beta.example",
+                "external_id": "row-2"
+              },
+              "company": null,
+              "error": {
+                "code": "not_found",
+                "message": "No AI adoption data for this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 1
+          }
+        }
+      }
+    }
+  ]
+}

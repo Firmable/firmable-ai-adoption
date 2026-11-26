@@ -1,0 +1,11 @@
+row_id,role,domain,company_id,segment
+f,focus,focus.example,,Self
+p1,peer,peer-one.example,,Listed
+p2,peer,peer-two.example,,Listed
+p3,Peer,peer-three.example,,Private
+p4,peer,peer-four.example,,Private
+p5,peer,peer-five.example,,
+p6,peer,peer-one.example,,Listed
+p7,peer,not a domain,,Private
+p8,peer,www.focus.example,,Private
+p9,peer,,f900000000101,Private

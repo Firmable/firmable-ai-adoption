@@ -1,0 +1,337 @@
+{
+  "description": "One company per batch: a found row, a 500, a row error, a malformed body, a results length mismatch, a wrong external_id, a timeout, a 402 that stops the run, and a row not sent.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "zero.example",
+              "external_id": "e0"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "zero.example",
+                "external_id": "e0"
+              },
+              "company": {
+                "firmable_id": "f900000000010",
+                "company_name": "Zero Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "BASIC",
+                "explanation": "Synthetic explanation: Zero Example has BASIC adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Zero Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Zero Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Zero Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Zero Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Zero Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 1
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "one.example",
+              "external_id": "e1"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "internal",
+            "message": "Something went wrong"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "two.example",
+              "external_id": "e2"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "two.example",
+                "external_id": "e2"
+              },
+              "company": null,
+              "error": {
+                "code": "scoring_failed",
+                "message": "Scoring failed."
+              },
+              "usage": {
+                "billable": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "three.example",
+              "external_id": "e3"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": "not a list"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "four.example",
+              "external_id": "e4"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": []
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "five.example",
+              "external_id": "e5"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "five.example",
+                "external_id": "zzz"
+              },
+              "company": {
+                "firmable_id": "f900000000015",
+                "company_name": "Five Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "BASIC",
+                "explanation": "Synthetic explanation: Five Example has BASIC adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Five Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Five Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Five Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Five Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Five Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 1
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "six.example",
+              "external_id": "e6"
+            }
+          ]
+        }
+      },
+      "response": {
+        "timeout": true
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "seven.example",
+              "external_id": "e7"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 402,
+        "json": {
+          "error": {
+            "code": "insufficient_credits",
+            "message": "Not enough credits."
+          }
+        }
+      }
+    }
+  ]
+}

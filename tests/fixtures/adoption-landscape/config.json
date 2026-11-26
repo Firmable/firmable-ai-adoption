@@ -1,0 +1,6 @@
+{
+  "batch_size": 3,
+  "with_evidence": false,
+  "group_by": "segment",
+  "min_answered": 2
+}

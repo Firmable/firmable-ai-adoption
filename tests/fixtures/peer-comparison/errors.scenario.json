@@ -1,0 +1,222 @@
+{
+  "description": "Batches of 2: a 503 on the focus batch, one good batch, a 402 that stops the run, and a batch not sent.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "focus.example",
+              "external_id": "f"
+            },
+            {
+              "domain": "peer-one.example",
+              "external_id": "p1"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 503,
+        "json": {
+          "error": {
+            "code": "unavailable",
+            "message": "Service unavailable"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "peer-two.example",
+              "external_id": "p2"
+            },
+            {
+              "domain": "peer-three.example",
+              "external_id": "p3"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "peer-two.example",
+                "external_id": "p2"
+              },
+              "company": {
+                "firmable_id": "f900000000103",
+                "company_name": "Peer Two Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "BASIC",
+                "explanation": "Synthetic explanation: Peer Two Example has BASIC adoption.",
+                "momentum": {
+                  "label": "STEADY",
+                  "signals": []
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Peer Two Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Peer Two Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Peer Two Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Peer Two Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Peer Two Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "peer-three.example",
+                "external_id": "p3"
+              },
+              "company": {
+                "firmable_id": "f900000000104",
+                "company_name": "<b>Peer</b> Three Example",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "STRONG",
+                "explanation": "Synthetic explanation: <b>Peer</b> Three Example has STRONG adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for <b>Peer</b> Three Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for <b>Peer</b> Three Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for <b>Peer</b> Three Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for <b>Peer</b> Three Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "Synthetic workforce headline for <b>Peer</b> Three Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 2
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "peer-four.example",
+              "external_id": "p4"
+            },
+            {
+              "domain": "peer-five.example",
+              "external_id": "p5"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 402,
+        "json": {
+          "error": {
+            "code": "insufficient_credits",
+            "message": "Not enough credits."
+          }
+        }
+      }
+    }
+  ]
+}

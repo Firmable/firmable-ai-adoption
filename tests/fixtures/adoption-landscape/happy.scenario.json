@@ -1,0 +1,505 @@
+{
+  "description": "Batches of 3, duplicates, a not found company, an invalid row, an unlisted level, two identifiers for one Firmable company, and markup in API text.",
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "alpha.example",
+              "external_id": "r1"
+            },
+            {
+              "domain": "beta.example",
+              "external_id": "r2"
+            },
+            {
+              "domain": "gamma.example",
+              "external_id": "r3"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "alpha.example",
+                "external_id": "r1"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Alpha Example Pty Ltd",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "STRONG",
+                "explanation": "Synthetic explanation: Alpha Example Pty Ltd has STRONG adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "MEANINGFUL",
+                    "headline": "Synthetic architecture headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "Synthetic workforce headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "beta.example",
+                "external_id": "r2"
+              },
+              "company": {
+                "firmable_id": "f900000000002",
+                "company_name": "Beta Example Ltd",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "SMB",
+                "overall_level": "BASIC",
+                "explanation": "Synthetic explanation: Beta Example Ltd has BASIC adoption.",
+                "momentum": {
+                  "label": "STEADY",
+                  "signals": []
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Beta Example Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "gamma.example",
+                "external_id": "r3"
+              },
+              "company": null,
+              "error": {
+                "code": "not_found",
+                "message": "No AI adoption data for this company"
+              },
+              "usage": {
+                "billable": false
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 2
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "company_id": "f900000000004",
+              "external_id": "r4"
+            },
+            {
+              "domain": "delta.example",
+              "external_id": "r7"
+            },
+            {
+              "domain": "epsilon.example",
+              "external_id": "r8"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "company_id": "f900000000004",
+                "external_id": "r4"
+              },
+              "company": {
+                "firmable_id": "f900000000004",
+                "company_name": "Fourth Example Co",
+                "country": "AU",
+                "industry_group": "Financial services",
+                "size_band": "MID_MARKET",
+                "overall_level": "MEANINGFUL",
+                "explanation": "Synthetic explanation: Fourth Example Co has MEANINGFUL adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Fourth Example Co",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Fourth Example Co",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "MODERATE",
+                    "headline": "Synthetic hiring headline for Fourth Example Co",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Fourth Example Co",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Fourth Example Co",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "delta.example",
+                "external_id": "r7"
+              },
+              "company": {
+                "firmable_id": "f900000000005",
+                "company_name": "Delta Example Group",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "TRANSFORMING",
+                "explanation": "Synthetic explanation: Delta Example Group has TRANSFORMING adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "BASIC",
+                    "headline": "Synthetic architecture headline for Delta Example Group",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "EMERGING",
+                    "headline": "Synthetic footprint headline for Delta Example Group",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Delta Example Group",
+                    "observability": "LOW",
+                    "counts_toward_overall": true
+                  },
+                  "workforce": {
+                    "level": "BASIC",
+                    "headline": "Synthetic workforce headline for Delta Example Group",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-09-30",
+                "framework_version": "2026.09"
+              },
+              "usage": {
+                "billable": true
+              }
+            },
+            {
+              "input": {
+                "domain": "epsilon.example",
+                "external_id": "r8"
+              },
+              "company": {
+                "firmable_id": "f900000000006",
+                "company_name": "<b>Eps</b> Example",
+                "country": "AU",
+                "size_band": "MID_MARKET",
+                "overall_level": "NONE",
+                "explanation": "<script>alert(1)</script> Synthetic explanation.",
+                "momentum": {
+                  "label": "STEADY",
+                  "signals": []
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "NONE",
+                    "headline": "Synthetic architecture headline for <b>Eps</b> Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "NONE",
+                    "headline": "Synthetic footprint headline for <b>Eps</b> Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "NONE",
+                    "headline": "Synthetic hiring headline for <b>Eps</b> Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "NONE",
+                    "headline": "Synthetic initiatives headline for <b>Eps</b> Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "NONE",
+                    "headline": "Synthetic workforce headline for <b>Eps</b> Example",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 3
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/ai-adoption",
+        "query": {},
+        "body": {
+          "records": [
+            {
+              "domain": "alpha-group.example",
+              "external_id": "r9"
+            }
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "json": {
+          "results": [
+            {
+              "input": {
+                "domain": "alpha-group.example",
+                "external_id": "r9"
+              },
+              "company": {
+                "firmable_id": "f900000000001",
+                "company_name": "Alpha Example Pty Ltd",
+                "country": "AU",
+                "industry_group": "Software",
+                "size_band": "MID_MARKET",
+                "overall_level": "STRONG",
+                "explanation": "Synthetic explanation: Alpha Example Pty Ltd has STRONG adoption.",
+                "momentum": {
+                  "label": "EXPANDING",
+                  "signals": [
+                    {
+                      "kind": "AI hiring",
+                      "count": 2,
+                      "latest": "2026-10-13"
+                    }
+                  ]
+                },
+                "dimensions": {
+                  "architecture": {
+                    "level": "MEANINGFUL",
+                    "headline": "Synthetic architecture headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "footprint": {
+                    "level": "BASIC",
+                    "headline": "Synthetic footprint headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "hiring": {
+                    "level": "BASIC",
+                    "headline": "Synthetic hiring headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  },
+                  "initiatives": {
+                    "level": "BASIC",
+                    "headline": "Synthetic initiatives headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": false
+                  },
+                  "workforce": {
+                    "level": "STRONG",
+                    "headline": "Synthetic workforce headline for Alpha Example Pty Ltd",
+                    "observability": "HIGH",
+                    "counts_toward_overall": true
+                  }
+                },
+                "evidence_available": {
+                  "architecture": 3,
+                  "footprint": 3,
+                  "hiring": 3,
+                  "initiatives": 3,
+                  "workforce": 3
+                },
+                "as_of": "2026-11-10",
+                "framework_version": "2026.10"
+              },
+              "usage": {
+                "billable": true
+              }
+            }
+          ],
+          "usage": {
+            "billable_rows": 1
+          }
+        }
+      }
+    }
+  ]
+}

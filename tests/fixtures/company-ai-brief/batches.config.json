@@ -1,0 +1,5 @@
+{
+  "with_evidence": false,
+  "max_items_per_area": 5,
+  "batch_size": 2
+}
